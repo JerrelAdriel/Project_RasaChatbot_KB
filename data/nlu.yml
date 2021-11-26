@@ -1,0 +1,814 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - selamat datang
+    - selamat malam
+    - selamat sore
+    - selamat pagi
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - semoga hari mu menyenangkan
+    - selamat malam
+    - bye
+    - goodbye
+    - have a nice day
+    - sampai ketemu lagi
+    - sampai jumpa lagi
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - saya baik
+    - saya sedang senang
+    - sangat baik
+    - tidak buruk
+    - extremely good
+    - so so perfect
+    - so good
+    - baik
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - saya sedang sedih
+    - saya sedang tidak baik
+    - sangat sedih
+    - sedih
+    - tidak baik
+    - bosan
+    - sedang tidak senang
+    - hari yang buruk
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - apakah kamu bot?
+    - apakah kamu manusia?
+    - siapa ini?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: menu_utama
+  examples: |
+    - Menu Utama
+    - Menu utama
+    - menu utama
+    - Menu_utama
+    - menu_utama
+- intent: user_nama
+  examples: |
+    - nama saya [syauqi](nama)
+    - saya [syauqi](nama)
+    - saya bernama [syauqi](nama)
+    - panggilan saya [syauqi](nama)
+    - [syauqi](nama)
+    - nama saya [jerrel](nama)
+    - saya bernama [jerrel](nama)
+    - panggilan saya [jerrel](nama)
+    - saya [jerrel](nama)
+    - [jerrel](nama)
+    - nama saya [indra](nama)
+    - saya bernama [indra](nama)
+    - panggilan saya [indra](nama)
+    - saya [indra](nama)
+    - [indra](nama)
+- intent: tanya/gelar_gelar
+  examples: |
+    - gelar
+    - saya ingin informasi tantang gelar
+    - tentang gelar
+    - informasi tentang gelar yang didapatkan
+    - informasi tentang gelar
+- intent: tanya/skpi
+  examples: |
+    - SKPI
+    - saya ingin informasi tentang skpi
+    - tentang skpi
+    - informasi tentang skpi
+    - surat keterangan pendamping ijazah
+    - saya ingin informasi tentang surat keterangan pendamping ijazah
+    - tentang surat keterangan pendamping ijazah
+    - informasi tentang surat keterangan pendamping ijazah
+- intent: tanya/mahasiswa_aktif
+  examples: |
+    - mahasiswa aktif
+    - saya ingin informasi tentang mahasiswa aktif
+    - tentang mahasiswa aktif
+    - informasi tentang mahasiswa aktif
+- intent: tanya/gelar_gelar_D3
+  examples: |
+    - apa saja gelar untuk d3
+    - gelar diploma
+    - gelar diploma tiga
+    - gelar dipkom
+    - gelar diploma 3
+    - apa gelar diploma
+    - apa gelar diploma tiga
+    - apa gelar dipkom
+    - apa gelar diploma 3
+    - apa sebutan gelar diploma
+    - apa sebutan gelar diploma tiga
+    - apa sebutan gelar dipkom
+    - apa sebutan gelar diploma 3
+    - gelar diploma komputerisasi akuntansi
+    - gelar diploma ka
+    - gelar diploma teknik komputer
+    - gelar diploma teknik komputer dan jaringan
+    - gelar diploma tk
+    - gelar diploma tkj
+    - gelar diploma manajemen informasi
+    - gelar diploma mi
+    - gelar komputerisasi akuntansi
+    - gelar ka
+    - gelar teknik komputer
+    - gelar teknik komputer dan jaringan
+    - gelar tk
+    - gelar tkj
+    - gelar manajemen informasi
+    - gelar mi
+- intent: tanya/gelar_gelar_SK
+  examples: |
+    - sebutan gelar sk
+    - gelar sk
+    - apa sebutan gelar sistem komputer
+    - sebutan gelar sistem komputer
+    - gelar sistem komputer
+- intent: tanya/gelar_gelar_TI
+  examples: |
+    - apa sebutan gelar TI
+    - sebutan gelar ti
+    - gelar ti
+    - apa sebutan gelar teknik informatika
+    - sebutan gelar teknik informatika
+    - gelar teknik informatika
+- intent: tanya/gelar_gelar_SI
+  examples: |
+    - apa sebutan gelar si
+    - sebutan gelar si
+    - gelar si
+    - apa sebutan gelar sistem informasi
+    - sebutan gelar sistem informasi
+    - gelar sistem informasi
+- intent: tanya/gelar_gelar_magister
+  examples: |
+    - apa sebutan gelar magister teknik informatika
+    - sebutan gelar magister teknik informatika
+    - gelar magister teknik informatika
+    - apa sebutan gelar magister ti
+    - sebutan gelar magister ti
+    - gelar magister ti
+- intent: tanya/program_D3
+  examples: |
+    - apa Program dari komputerisasi Akuntansi
+    - apa Program komputerisasi akuntansi
+    - apa program ka
+    - apa Program dari Manajemen Informatika
+    - apa Program manajemen informatika
+    - apa program mi
+    - apa Program dari Teknik Komputer
+    - apa program teknik komputer
+    - apa program tk
+- intent: tanya/program_sarjana
+  examples: |
+    - apa Program dari Sistem Komputer
+    - apa Program dari sk
+    - apa Program sk
+    - apa Program Sistem Komputer
+    - apa Program dari Sistem Informasi
+    - apa program sistem informasi
+    - apa program si
+- intent: tanya/program_sarjana_magister
+  examples: |
+    - apa Program dari Teknik Informatika
+    - apa program teknik informatika
+    - apa program ti
+- intent: tanya/formulir
+  examples: |
+    - lampiran
+    - dokumen
+    - menu dokumen
+    - menu lampiran
+    - info tentang dokumen dokumen
+    - lampiran lampiran
+    - dokumen dokumen
+    - menu formulir
+    - informasi tentang formulir
+- intent: tanya/form_maba
+  examples: |
+    - form 1
+    - Tunjukkan Lampiran 1. Kelengkapan Dokumen untuk Pendaftaran Ulang (Registrasi) Mahasiswa Baru
+    - Tunjukkan Lampiran 1. Kelengkapan Dokumen untuk Pendaftaran Ulang Mahasiswa Baru
+    - Tunjukkan Lampiran 1. Kelengkapan Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Tunjukkan Lampiran 1. Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Tunjukkan Lampiran 1. Pendaftaran Ulang Mahasiswa Baru
+    - Tunjukkan Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Tunjukkan Lampiran 1.
+    - Tampilkan Lampiran 1. Kelengkapan Dokumen untuk Pendaftaran Ulang (Registrasi) Mahasiswa Baru
+    - Tampilkan Lampiran 1. Kelengkapan Dokumen untuk Pendaftaran Ulang Mahasiswa Baru
+    - Tampilkan Lampiran 1. Kelengkapan Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Tampilkan Lampiran 1. Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Tampilkan Lampiran 1. Pendaftaran Ulang Mahasiswa Baru
+    - Tampilkan Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Tampilkan Lampiran 1.
+    - Lampiran 1. Kelengkapan Dokumen untuk Pendaftaran Ulang (Registrasi) Mahasiswa Baru
+    - Lampiran 1. Kelengkapan Dokumen untuk Pendaftaran Ulang Mahasiswa Baru
+    - Lampiran 1. Kelengkapan Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Lampiran 1. Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Lampiran 1. Pendaftaran Ulang Mahasiswa Baru
+    - Dokumen Pendaftaran Ulang Mahasiswa Baru
+    - Lampiran 1.
+    - Tunjukkan Lampiran 1. Kelengkapan Dokumen untuk Registrasi Mahasiswa Baru
+    - Tunjukkan Lampiran 1. Kelengkapan Dokumen Registrasi Mahasiswa Baru
+    - Tunjukkan Lampiran 1. Dokumen Registrasi Mahasiswa Baru
+    - Tunjukkan Lampiran 1. Registrasi Mahasiswa Baru
+    - Tunjukkan Dokumen Registrasi Mahasiswa Baru
+    - Tampilkan Lampiran 1. Kelengkapan Dokumen untuk Registrasi Mahasiswa Baru
+    - Tampilkan Lampiran 1. Kelengkapan Dokumen Registrasi Mahasiswa Baru
+    - Tampilkan Lampiran 1. Dokumen Registrasi Mahasiswa Baru
+    - Tampilkan Lampiran 1. Registrasi Mahasiswa Baru
+    - Tampilkan Dokumen Registrasi Mahasiswa Baru
+    - Lampiran 1. Kelengkapan Dokumen untuk Registrasi Mahasiswa Baru
+    - Lampiran 1. Kelengkapan Dokumen Registrasi Mahasiswa Baru
+    - Lampiran 1. Dokumen Registrasi Mahasiswa Baru
+    - Lampiran 1. Registrasi Mahasiswa Baru
+    - Dokumen Registrasi Mahasiswa Baru
+    - Tunjukkan Form Pendaftaran Ulang Mahasiswa Baru
+    - Tunjukkan Formulir Pendaftaran Ulang Mahasiswa Baru
+    - Tunjukkan Form Registrasi Mahasiswa Baru
+    - Tunjukkan Formulir Registrasi Mahasiswa Baru
+    - Tampilkan Form Pendaftaran Ulang Mahasiswa Baru
+    - Tampilkan Formulir Pendaftaran Ulang Mahasiswa Baru
+    - Tampilkan Form Registrasi Mahasiswa Baru
+    - Tampilkan Formulir Registrasi Mahasiswa Baru
+    - Form Pendaftaran Ulang Mahasiswa Baru
+    - Formulir Pendaftaran Ulang Mahasiswa Baru
+    - Form Registrasi Mahasiswa Baru
+    - Formulir Registrasi Mahasiswa Baru
+- intent: tanya/form_kartu_induk
+  examples: |
+    - form 2
+    - Tunjukkan Lampiran 2. Kartu Induk Data Mahasiswa
+    - Tunjukkan Lampiran 2. Dokumen Kartu Induk Data Mahasiswa
+    - Tunjukkan Lampiran 2.
+    - Kartu Induk Data Mahasiswa
+    - Tampilkan Lampiran 2. Kartu Induk Data Mahasiswa
+    - Tampilkan Lampiran 2. Dokumen Kartu Induk Data Mahasiswa
+    - Tampilkan Lampiran 2.
+    - Form Kartu Induk Data Mahasiswa
+    - Formulir Kartu Induk Data Mahasiswa
+    - Tunjukkan Form Kartu Induk Data Mahasiswa
+    - Tunjukkan Formulir Kartu Induk Data Mahasiswa
+    - Tampilkan Form Kartu Induk Data Mahasiswa
+    - Tampilkan Formulir Kartu Induk Data Mahasiswa
+- intent: tanya/pengertian_skpi
+  examples:
+  - text: |
+      skpi 1
+  - text: |
+      apa itu surat SKPI?		
+  - text: |
+      apa itu surat keterangan pendamping ijazah?		
+  - text: |
+      pengertian surat keterangan pendamping ijazah?		
+  - text: |
+      pengertian SKPI
+  - text: |
+      apa itu surat pendamping ijazah
+  - text: |
+      pengertian surat pendamping ijazah
+- intent: tanya/aturan_skpi
+  examples:
+  - text: |
+      skpi 2
+  - text: |
+      Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah (SKPI) bagi Lulusan Universitas Sriwijaya		
+  - text: |
+      Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah bagi Lulusan Universitas Sriwijaya		
+  - text: |
+      Aturan yang mengatur tentang SKPI bagi Lulusan Universitas Sriwijaya
+  - text: |
+      Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah bagi Lulusan Unsri		
+  - text: |
+      Aturan yang mengatur tentang SKPI bagi Lulusan Unsri
+  - text: |
+      Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah (SKPI) bagi alumni
+  - text: |
+      Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah (SKPI) bagi alumni Universitas Sriwijaya
+  - text: |
+      Aturan yang mengatur tentang  SKPI bagi alumni	
+  - text: |
+      Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah bagi alumni		
+  - text: |
+      Aturan tentang Surat Keterangan Pendamping Ijazah bagi alumni
+  - text: |
+      Aturan tentang SKPI bagi Lulusan Universitas Sriwijaya
+  - text: |
+      Aturan tentang Surat Keterangan Pendamping Ijazah bagi Lulusan Universitas Sriwijaya
+- intent: tanya/isi_skpi
+  examples:
+  - text: |
+      skpi 3
+  - text: |
+      isi dari Surat Keterangan Pendamping Ijazah
+  - text: |
+      Apa saja isi dari Surat Keterangan Pendamping Ijazah (SKPI)
+  - text: |
+      Apa saja isi dari Surat Keterangan Pendamping Ijazah 		
+  - text: |
+      Apa saja isi dari SKPI
+  - text: |
+      isi dari skpi
+  - text: |
+      isi dari SKPI
+  - text: |
+      Apa saja isi SKPI	
+  - text: |
+      Apa saja isi Surat Keterangan Pendamping Ijazah
+  - text: |
+      Apa isi dari Surat Keterangan Pendamping Ijazah
+  - text: |
+      Apa isi dari SKPI
+- intent: tanya/layanan_alumni
+  examples: |
+    - layanan yang didapatkan alumni
+    - Bentuk layanan apa saja yang bisa didapatkan alumni
+    - layanan apa saja yang bisa didapatkan alumni
+    - Bentuk layanan apa yang didapatkan alumni
+    - Bentuk layanan apa yang bisa didapatkan alumni
+    - Bentuk layanan yang didapatkan alumni
+    - alumni
+    - saya ingin informasi tentang alumni
+    - tentang alumni
+    - informasi tentang alumni
+- intent: tanya/legalisir_ijazah_transkrip
+  examples: |
+    - cara mendapatkan Legalisir Ijazah dan Transkrip
+    - Bagaimana cara mendapatkan Legalisir Ijazah dan Transkrip
+    - Bagaimana mendapatkan Legalisir Ijazah dan Transkrip
+    - Bagaimana cara mendapatkan Legalisir Ijazah
+    - Bagaimana cara mendapatkan Legalisir dan Transkrip
+    - cara mendapatkan Legalisir Ijazah
+    - cara mendapatkan Legalisir Transkrip
+- intent: tanya/ganti_ijazah_transkrip
+  examples: |
+    - Bagaimana cara mendapatkan Surat Keterangan Pengganti Ijazah/Transkrip yang Rusak/Hilang
+    - Bagaimana cara mendapatkan Surat Keterangan Pengganti Ijazah yang rusak
+    - Bagaimana cara mendapatkan Surat Keterangan Pengganti Ijazah yang Hilang
+    - cara mendapatkan Surat Keterangan Pengganti Ijazah yang Rusak
+    - cara mendapatkan Surat Keterangan Pengganti Ijazah yang Hilang
+    - Bagaimana cara mendapatkan Surat Keterangan Pengganti Ijazah
+    - Bagaimana cara mendapatkan Transkrip yang Rusak
+    - Bagaimana cara mendapatkan Transkrip yang Hilang
+    - cara mendapatkan Transkrip yang Rusak
+    - cara mendapatkan Transkrip yang Hilang
+- intent: tanya/transkrip_inggris
+  examples: |
+    - Bagaimana cara mendapatkan Pembuatan Terjemahan Ijazah/Transkrip ke Dalam Bahasa Inggris
+    - Bagaimana cara mendapatkan Pembuatan Terjemahan Ijazah ke Dalam Bahasa Inggris
+    - Bagaimana cara mendapatkan Pembuatan Terjemahan Ijazah  Dalam Bahasa Inggris
+    - Bagaimana cara mendapatkan Pembuatan Terjemahan Ijazah ke Bahasa Inggris
+    - cara mendapatkan Pembuatan Terjemahan Ijazah ke Dalam Bahasa Inggris
+    - cara mendapatkan Terjemahan Ijazah Dalam Bahasa Inggris
+    - Bagaimana cara Pembuatan Terjemahan Ijazah dalam Bahasa Inggris
+    - cara mendapatkan Pembuatan Terjemahan Ijazah ke Bahasa Inggris
+    - Bagaimana cara mendapatkan  Terjemahan Ijazah Dalam Bahasa Inggris
+    - Bagaimana cara mendapatkan Terjemahan Ijazah Bahasa Inggris
+    - cara mendapatkan Terjemahan Ijazah  Bahasa Inggris
+    - Bagaimana cara mendapatkan Pembuatan Terjemahan transkip ke Dalam Bahasa Inggris
+    - Bagaimana cara mendapatkan Pembuatan Terjemahan transkip  Dalam Bahasa Inggris
+    - Bagaimana cara mendapatkan Pembuatan Terjemahan transkip ke Bahasa Inggris
+    - cara mendapatkan Pembuatan Terjemahan transkip ke Dalam Bahasa Inggris
+    - cara mendapatkan Terjemahan transkip Dalam Bahasa Inggris
+    - Bagaimana cara Pembuatan Terjemahan transkip dalam Bahasa Inggris
+    - cara mendapatkan Pembuatan Terjemahan transkip ke Bahasa Inggris
+    - Bagaimana cara mendapatkan  Terjemahan transkip Dalam Bahasa Inggris
+    - Bagaimana cara mendapatkan Terjemahan transkip Bahasa Inggris
+    - cara mendapatkan Terjemahan transkip  Bahasa Inggris
+- intent: tanya/konseling_karir
+  examples: |
+    - Bagaimana cara mengajukan Konseling Karir
+    - cara mengajukan Konseling Karir
+    - Bagaimana mengajukan Konseling Karir
+    - konseling karir
+    - mengajukan Konseling Karir
+- intent: tanya/tracer_study_online
+  examples: |
+    - Bagaimana cara agar dapat mengisi Tracer Study Online
+    - cara agar dapat mengisi Tracer Study Online
+    - cara dapat mengisi Tracer Study Online
+    - mengisi Tracer Study Online
+    - Bagaimana mengisi Tracer Study Online
+- intent: tanya/ikatan_alumni
+  examples: |
+    - Apa itu Ikatan Alumni
+    - Ikatan Alumni
+    - pengertian Ikatan Alumni
+- intent: tanya/kegiatan_ikatan_alumni
+  examples: |
+    - Apa saja kegiatan dari Ikatan Alumni
+    - Apa kegiatan dari Ikatan Alumni
+    - kegiatan dari Ikatan Alumni
+    - Apa saja kegiatan Ikatan Alumni
+    - Apa kegiatan Ikatan Alumni
+- intent: tanya/syarat_pelayanan
+  examples: |
+    - mahasiswa aktif 1
+    - apa saja syarat untuk pelayanan administrasi akademik
+    - apa saja syarat untuk mendapat pelayanan administrasi akademik
+    - apa saja syarat untuk mendapat pelayanan administrasi akademik dan kemahasiswaan
+    - apa saja syarat untuk pelayanan administrasi akademik dan kemahasiswaan
+    - bagaimana cara untuk mendapat pelayanan administrasi akademik
+    - bagaimana cara untuk mendapat pelayanan administrasi akademik dan kemahasiswaan
+    - bagaimana cara untuk mendapat pelayanan dari administrasi akademik dan kemahasiswaan
+    - apa saja syarat agar mendapat pelayanan administrasi akademik
+    - apa saja syarat agar mendapat pelayanan administrasi akademik dan kemahasiswaan
+    - apa saja syarat agar mendapat pelayanan dari administrasi akademik
+    - apa saja syarat agar mendapat pelayanan dari administrasi akademik dan kemahasiswaan
+    - 
+- intent: tanya/pelayanan_diberikan
+  examples: |
+    - mahasiswa aktif 2
+    - pelayanan apa saja yang akan saya dapatkan?
+    - pelayanan apa saja yang bisa saya dapatkan?
+    - pelayanan apa yang diberikan?
+- intent: tanya/cara_dapat_surat_ket_aktif
+  examples: |
+    - mahasiswa aktif 3
+    - Bagaimana cara untuk mendapatkan Surat Keterangan sebagai Mahasiswa Aktif Universitas Sriwijaya
+    - Bagaimana cara untuk mendapatkan Surat Keterangan sebagai Mahasiswa Aktif Unsri
+    - Bagaimana cara untuk mendapatkan Surat Keterangan sebagai Mahasiswa Aktif
+    - Cara untuk mendapatkan Surat Keterangan sebagai Mahasiswa Aktif Universitas Sriwijaya
+    - Bagaimana cara untuk mendapatkan Surat Keterangan Mahasiswa Aktif
+    - Bagaimana cara untuk mendapatkan Surat Keterangan Mahasiswa Aktif Universitas Sriwijaya
+- intent: tanya/pengertian_surat_ket_aktif
+  examples: |
+    - mahasiswa aktif 4
+    - Apa itu Surat Keterangan sebagai Mahasiswa Aktif Unsri
+    - Apa itu Surat Keterangan sebagai Mahasiswa Aktif Universitas Sriwijaya
+    - Apa itu Surat Keterangan Mahasiswa Aktif Universitas Sriwijaya
+    - Apa itu Surat Keterangan Mahasiswa Aktif
+    - Apa itu Surat Keterangan Mahasiswa Aktif Unsri
+- intent: tanya/cara_ganti_kpm
+  examples: |
+    - mahasiswa aktif 5
+    - Bagaimana cara untuk mengganti KPM
+    - Bagaimana cara untuk mengganti Kartu Pengenal Mahasiswa
+    - Cara untuk mengganti Kartu Pengenal Mahasiswa
+    - Cara untuk mengganti KPM
+    - Cara untuk ganti KPM
+    - Bagaimana cara untuk mengganti Kartu Pengenal Mahasiswa (KPM)
+- intent: tanya/siapa_bisa_cuti
+  examples: |
+    - mahasiswa aktif 6
+    - siapa yang diperbolehkan ambil cuti
+    - siapa saja yang diperbolehkan ambil cuti
+    - siapa saja yang diperbolehkan mengambil permohonan Stop Out
+    - siapa saja yang diperbolehkan mengambil permohonan SO
+    - siapa yang diperbolehkan mengambil permohonan Stop Out
+    - Siapa saja yang diperbolehkan mengambil Permohonan Cuti Kuliah atau stop out
+    - Siapa saja yang diperbolehkan mengambil Permohonan Cuti Kuliah atau SO
+    - Siapa yang diperbolehkan mengambil Permohonan Cuti Kuliah atau SO
+    - Siapa saja yang diperbolehkan mengambil Permohonan Cuti Kuliah atau Stop Out
+- intent: tanya/cara_bisa_cuti
+  examples: |
+    - mahasiswa aktif 7
+    - Bagaimana cara untuk mengajukan Permohonan Cuti Kuliah atau SO
+    - Bagaimana cara untuk mengajukan Permohonan Cuti Kuliah atau Stop Out
+    - Cara untuk mengajukan Permohonan Cuti Kuliah atau Stop Out
+    - Cara untuk mengajukan Permohonan Cuti Kuliah atau SO
+    - Cara untuk mengajukan Permohonan Cuti Kuliah
+    - Bagaimana Cara untuk mengajukan Permohonan Cuti Kuliah
+    - Bagaimana Cara mengajukan Permohonan Cuti Kuliah
+    - Cara untuk mengajukan Permohonan Stop Out
+    - bagaimana cara untuk mengajukan Permohonan Stop Out
+    - bagaimana Cara mengajukan Permohonan Stop Out
+    - Cara mengajukan Permohonan Cuti Kuliah
+    - Cara mengajukan Cuti Kuliah
+    - Cara mengajukan Stop Out
+    - Cara mengajukan SO
+- intent: tanya/ukt_fakultas
+  examples: |
+    - mahasiswa aktif 8
+    - Apakah seluruh uang kuliah tunggal di setiap Fakultas/Program Pascasarjana/Jurusan sama
+    - Apakah seluruh UKT di setiap Fakultas/Program Pascasarjana/Jurusan sama
+    - Apakah seluruh UKT Jurusan sama
+    - Apakah seluruh uang kuliah tunggal Jurusan sama
+    - Apakah seluruh uang kuliah tunggal Pascasarjana sama
+    - Apakah seluruh UKT Pascasarjana sama
+    - Apakah seluruh uang kuliah tunggal di setiap Fakultas sama
+    - Apakah seluruh UKT di setiap Fakultas sama
+    - Apakah seluruh uang kuliah tunggal di setiap Program sama
+    - Apakah seluruh UKT di setiap Program sama
+    - Apakah seluruh UKT nya sama semua
+- intent: tanya/ukt_lunas
+  examples: |
+    - mahasiswa aktif 9
+    - Apa yang dapat dilakukan Mahasiswa jika sudah membayar UKT
+    - Apa yang dapat dilakukan Mahasiswa jika sudah membayar uang kuliah tunggal
+    - yang dapat dilakukan Mahasiswa jika sudah membayar UKT
+    - yang dapat dilakukan Mahasiswa jika sudah membayar uang kuliah tunggal
+- intent: tanya/tidak_bayar_ukt
+  examples: |
+    - Apa yang terjadi jika tidak membayar UKT
+    - Tidak bayar UKT
+    - Konsekuensi tidak membayar UKT
+    - Hukuman tidak membayar UKT
+    - Sanksi tidak membayar UKT
+    - Konsekuensi tidak bayar UKT
+    - Hukuman tidak bayar UKT
+    - Sanksi tidak bayar UKT
+    - Kemungkinan jika tidak membayar UKT
+    - Kemungkinan jika tidak bayar UKT
+- intent: tanya/dapat_beasiswa
+  examples: |
+    - Hal yang perlu diperhatikan atau dilakukan dalam rangka mengusulkan memperoleh beasiswa
+    - Hal yang perlu diperhatikan atau dilakukan untuk mendapatkan beasiswa
+    - Hal yang perlu diperhatikan atau dilakukan untuk memperoleh beasiswa
+    - Hal yang perlu diperhatikan untuk memperoleh beasiswa
+    - Hal yang perlu dilakukan untuk memperoleh beasiswa
+    - Hal yang perlu diperhatikan untuk mendapatkan beasiswa
+    - Hal yang perlu dilakukan untuk mendapatkan beasiswa
+    - Yang perlu diperhatikan atau dilakukan dalam rangka mengusulkan memperoleh beasiswa
+    - Yang perlu diperhatikan atau dilakukan untuk mendapatkan beasiswa
+    - Yang perlu diperhatikan atau dilakukan untuk memperoleh beasiswa
+    - Yang perlu diperhatikan untuk mendapatkan beasiswa
+    - Yang perlu diperhatikan untuk memperoleh beasiswa
+    - Yang perlu dilakukan untuk mendapatkan beasiswa
+    - Yang perlu dilakukan untuk memperoleh beasiswa
+    - Memperoleh Beasiswa
+    - Mendapatkan Beasiswa
+- intent: tanya/kewajiban_beasiswa
+  examples: |
+    - Kewajiban penerima beasiswa
+    - Apa saja kewajiban mahasiswa penerima beasiswa
+    - Kewajiban mahasiswa penerima beasiswa
+    - Kewajiban dari mahasiswa penerima beasiswa
+    - Kewajiban dari penerima beasiswa
+    - Apa saja kewajiban dari mahasiswa penerima beasiswa
+    - Apa saja kewajiban dari mahasiswa sebagai penerima beasiswa
+    - Kewajiban mahasiswa sebagai penerima beasiswa
+    - Kewajiban penerima sebagai beasiswa
+    - Kewajiban dari mahasiswa sebagai penerima beasiswa
+- intent: tanya/beasiswa_pascasarjana
+  examples: |
+    - Bagaimana cara untuk melakukan permohonan dan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Cara untuk melakukan permohonan dan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Cara untuk melakukan permohonan beasiswa untuk mahasiswa Program Pascasarjana
+    - Cara untuk melakukan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Cara melakukan permohonan dan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Cara melakukan permohonan beasiswa untuk mahasiswa Program Pascasarjana
+    - Cara melakukan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Permohonan dan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Permohonan beasiswa untuk mahasiswa Program Pascasarjana
+    - Penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Bagaimana cara melakukan permohonan dan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Bagaimana cara melakukan permohonan beasiswa untuk mahasiswa Program Pascasarjana
+    - Bagaimana cara melakukan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+    - Bagaimana cara untuk melakukan permohonan beasiswa untuk mahasiswa Program Pascasarjana
+    - Bagaimana cara untuk melakukan penyaluran beasiswa untuk mahasiswa Program Pascasarjana
+- intent: tanya/pencairan_beasiswa
+  examples: |
+    - Pencairan Beasiswa
+    - Bagaimana Pencairan Beasiswa dilakukan
+    - Cara pencairan Beasiswa
+    - Bagaimana cara Pencairan Beasiswa dilakukan
+    - Cara Pencairan Beasiswa dilakukan
+- intent: tanya/waktu_pencairan_beasiswa
+  examples: |
+    - Kapan waktu pencairan Beasiswa dilakukan
+    - Waktu pencairan Beasiswa
+    - Waktu pencairan Beasiswa dilakukan
+- intent: tanya/perbaikan_khs
+  examples: |
+    - Bagaimana cara mengajukan Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Cara mengajukan Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Mengajukan Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Meminta Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Cara Meminta Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Perbaikan KHS
+    - Cara Pengajuan Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Pengajuan Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+    - Pengajuan Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Cara Pengajuan Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Cara Meminta Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Meminta Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Mengajukan Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Cara mengajukan Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Bagaimana cara mengajukan Perbaikan Kesalahan Penulisan Nilai pada KHS
+    - Bagaimana cara mengajukan Perbaikan KHS
+    - Cara mengajukan Perbaikan KHS
+    - Mengajukan Perbaikan KHS
+    - Meminta Perbaikan KHS
+    - Cara Meminta Perbaikan KHS
+    - Cara Pengajuan Perbaikan KHS
+    - Pengajuan Perbaikan KHS
+- intent: tanya/tempat_perbaikan_khs
+  examples: |
+    - Dimana tempat Perbaikan KHS dilakukan
+    - Tempat Perbaikan KHS dilakukan
+    - Tempat Perbaikan KHS
+    - Lokasi Perbaikan KHS dilakukan
+    - Lokasi Perbaikan KHS
+- intent: tanya/sedia_asrama
+  examples: |
+    - Apakah Universitas Sriwijaya menyediakan asrama
+    - Asrama Universitas Sriwijaya
+    - Penyediaan Asrama
+    - Penyediaan Asrama Universitas Sriwijaya
+    - Penyediaan Asrama Unsri
+    - Asrama Unsri
+    - Apakah Unsri menyediakan asrama
+- intent: tanya/pengajuan_asrama
+  examples: |
+    - Bagaimana cara mengajukan Permohonan Menghuni Asrama Universitas Sriwijaya
+    - Cara mengajukan Permohonan Menghuni Asrama Universitas Sriwijaya
+    - Cara Pengajuan Permohonan Menghuni Asrama Universitas Sriwijaya
+    - Permohonan Menghuni Asrama Universitas Sriwijaya
+    - Pengajuan Permohonan Menghuni Asrama Universitas Sriwijaya
+    - Pengajuan Permohonan Menghuni Asrama Unsri
+    - Permohonan Menghuni Asrama Unsri
+    - Cara Pengajuan Permohonan Menghuni Asrama Unsri
+    - Cara mengajukan Permohonan Menghuni Asrama Unsri
+    - Bagaimana cara mengajukan Permohonan Menghuni Asrama Unsri
+    - Bagaimana cara mengajukan Permohonan Menghuni Asrama
+    - Cara mengajukan Permohonan Menghuni Asrama
+    - Cara Pengajuan Permohonan Menghuni Asrama
+    - Permohonan Menghuni Asrama
+    - Pengajuan Permohonan Menghuni Asrama
+- intent: tanya/pengunduran_mahasiswa
+  examples: |
+    - Bagaimana cara mengajukan Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya
+    - Cara mengajukan Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya
+    - Cara Pengajuan Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya
+    - Pengajuan Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya
+    - Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya
+    - Prosedur Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya
+    - Prosedur Pengunduran Diri sebagai Mahasiswa Unsri
+    - Pengunduran Diri sebagai Mahasiswa Unsri
+    - Pengajuan Pengunduran Diri sebagai Mahasiswa Unsri
+    - Cara Pengajuan Pengunduran Diri sebagai Mahasiswa Unsri
+    - Cara mengajukan Pengunduran Diri sebagai Mahasiswa Unsri
+    - Bagaimana cara mengajukan Pengunduran Diri sebagai Mahasiswa Unsri
+    - Bagaimana cara mengajukan Pengunduran Diri sebagai Mahasiswa
+    - Cara mengajukan Pengunduran Diri sebagai Mahasiswa
+    - Cara Pengajuan Pengunduran Diri sebagai Mahasiswa
+    - Pengajuan Pengunduran Diri sebagai Mahasiswa
+    - Pengunduran Diri sebagai Mahasiswa
+    - Prosedur Pengunduran Diri sebagai Mahasiswa
+- intent: tanya/pindah_prodi
+  examples: |
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Cara mengajukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Cara Pengajuan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Prosedur Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Pengajuan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Pengajuan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Prosedur Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Cara Pengajuan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Cara mengajukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa antar Program Studi
+    - Cara mengajukan Perpindahan Mahasiswa antar Program Studi
+    - Cara Pengajuan Perpindahan Mahasiswa antar Program Studi
+    - Prosedur Perpindahan Mahasiswa antar Program Studi
+    - Pengajuan Perpindahan Mahasiswa antar Program Studi
+    - Perpindahan Mahasiswa antar Program Studi
+- intent: tanya/univ_luar_ke_unsri
+  examples: |
+    - Cara mengajukan Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Cara Pengajuan Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Pengajuan Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Prosedur Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Cara mengajukan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Cara Pengajuan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Pengajuan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Prosedur Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Unsri
+    - Prosedur Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Unsri
+    - Pengajuan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Unsri
+    - Cara mengajukan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Unsri
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa dari PT lain ke Unsri
+    - Perpindahan Mahasiswa dari PT lain ke Unsri
+    - Prosedur Perpindahan Mahasiswa dari PT lain ke Unsri
+    - Pengajuan Perpindahan Mahasiswa dari PT lain ke Unsri
+    - Cara mengajukan Perpindahan Mahasiswa dari PT lain ke Unsri
+- intent: tanya/unsri_ke_luar_univ
+  examples: |
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain
+    - Cara mengajukan Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain
+    - Cara Pengajuan Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain
+    - Pengajuan Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain
+    - Prosedur Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain
+    - Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa dari Universitas Sriwijaya ke PT lain
+    - Cara mengajukan Perpindahan Mahasiswa dari Universitas Sriwijaya ke PT lain
+    - Cara Pengajuan Perpindahan Mahasiswa dari Universitas Sriwijaya ke PT lain
+    - Pengajuan Perpindahan Mahasiswa dari Universitas Sriwijaya ke PT lain
+    - Prosedur Perpindahan Mahasiswa dari Universitas Sriwijaya ke PT lain
+    - Perpindahan Mahasiswa dari Universitas Sriwijaya ke PT lain
+    - Perpindahan Mahasiswa dari Unsri ke PT lain
+    - Prosedur Perpindahan Mahasiswa dari Unsri ke PT lain
+    - Pengajuan Perpindahan Mahasiswa dari Unsri ke PT lain
+    - Cara Pengajuan Perpindahan Mahasiswa dari Unsri ke PT lain
+    - Cara mengajukan Perpindahan Mahasiswa dari Unsri ke PT lain
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa dari Unsri ke PT lain
+    - Perpindahan Mahasiswa dari Unsri ke Perguruan Tinggi lain
+    - Prosedur Perpindahan Mahasiswa dari Unsri ke Perguruan Tinggi lain
+    - Pengajuan Perpindahan Mahasiswa dari Unsri ke Perguruan Tinggi lain
+    - Cara Pengajuan Perpindahan Mahasiswa dari Unsri ke Perguruan Tinggi lain
+    - Cara mengajukan Perpindahan Mahasiswa dari Unsri ke Perguruan Tinggi lain
+    - Bagaimana cara mengajukan Perpindahan Mahasiswa dari Unsri ke Perguruan Tinggi lain
+- intent: tanya/waktu_daftar_wisuda
+  examples: |
+    - Kapan Pendaftaran mengikuti wisuda dilaksanakan
+    - Kapan waktu Pendaftaran mengikuti wisuda dilaksanakan
+    - Waktu Pendaftaran mengikuti wisuda dilaksanakan
+    - Waktu Pendaftaran mengikuti wisuda
+    - Waktu Pendaftaran wisuda
+    - Waktu Pendaftaran wisuda dilaksanakan
+    - Kapan waktu Pendaftaran wisuda dilaksanakan
+    - Kapan Pendaftaran wisuda dilaksanakan
+- intent: tanya/pendaftaran_wisuda
+  examples: |
+    - Bagaimana cara mengajukan Pendaftaran Mengikuti Wisuda
+    - Cara mengajukan Pendaftaran Mengikuti Wisuda
+    - Cara Pengajuan Pendaftaran Mengikuti Wisuda
+    - Pengajuan Pendaftaran Mengikuti Wisuda
+    - Prosedur Pendaftaran Mengikuti Wisuda
+    - Pendaftaran Mengikuti Wisuda
+    - Bagaimana cara mengajukan Pendaftaran Wisuda
+    - Cara mengajukan Pendaftaran Wisuda
+    - Cara Pengajuan Pendaftaran Wisuda
+    - Pengajuan Pendaftaran Wisuda
+    - Prosedur Pendaftaran Wisuda
+    - Pendaftaran Wisuda
+- intent: tanya/sistem_pembayaran_ukt
+  examples: |
+    - Sistem pembayaran UKT (uang kuliah tunggal)
+    - Bagaimana Sistem pembayaran UKT
+    - Sistem pembayaran UKT
+    - Bagaimana Sistem pembayaran uang kuliah tunggal
+    - Sistem pembayaran uang kuliah tunggal
+- intent: tanya/macam_macam_beasiswa
+  examples: |
+    - Macam-macam beasiswa di unsri
+    - Beasiswa yang ada di unsri
+    - Beasiswa apa saja yang ada di unsri
+    - Macam-macam beasiswa apa saja yang ada di unsri
+    - Beasiswa di Unsri
+    - Beasiswa di Universitas Sriwijaya
+    - Macam-macam beasiswa apa saja yang ada di Universitas Sriwijaya
+    - Beasiswa apa saja yang ada di Universitas Sriwijaya
+    - Beasiswa yang ada di Universitas Sriwijaya
+    - Macam-macam beasiswa di Universitas Sriwijaya
+- intent: tanya/syarat_pindah_prodi
+  examples: |
+    - Syarat agar dapat melakukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Syarat melakukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Syarat Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+    - Syarat Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Syarat melakukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Syarat agar dapat melakukan Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Unsri
+    - Syarat agar dapat melakukan Perpindahan Mahasiswa antar Program Studi
+    - Syarat melakukan Perpindahan Mahasiswa antar Program Studi
+    - Syarat Perpindahan Mahasiswa antar Program Studi
+- intent: tanya/syarat_pindah_univ
+  examples: |
+    - Syarat agar dapat melakukan Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Syarat melakukan Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Syarat Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya
+    - Syarat agar dapat melakukan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Syarat melakukan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Syarat Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Universitas Sriwijaya
+    - Syarat Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Unsri
+    - Syarat melakukan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Unsri
+    - Syarat agar dapat melakukan Perpindahan Mahasiswa dari Perguruan Tinggi lain ke Unsri
+    - Syarat Perpindahan Mahasiswa dari PT lain ke Unsri
+    - Syarat melakukan Perpindahan Mahasiswa dari PT lain ke Unsri
+    - Syarat agar dapat melakukan Perpindahan Mahasiswa dari PT lain ke Unsri

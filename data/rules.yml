@@ -1,0 +1,28 @@
+version: "2.0"
+
+rules:
+
+- rule: auto_tanya
+  steps:
+    - intent: tanya
+    - action: utter_tanya
+
+- rule: Menu utama
+  steps:
+    - intent: menu_utama
+    - action: utter_menu_utama
+
+- rule: goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+
+
+
+
+
+
+
+

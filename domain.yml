@@ -1,0 +1,466 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- tanya_bantuan:
+    use_entities: true
+- user_nama:
+    use_entities: true
+- menu_utama:
+    use_entities: true
+- tanya:
+    use_entities: true
+entities:
+- nama
+slots:
+  nama:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hai!
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Ini ada sesuatu yang bisa membuat mu senang:'
+  utter_kabar:
+  - text: Bagaimana hari mu?
+  utter_happy:
+  - text: Senang mendengarnya
+  utter_goodbye:
+  - text: Sampai jumpa
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_nama:
+  - text: Saya program U-bot, siapa nama mu?
+  utter_user_nama:
+  - text: Senang bisa mengenalmu {nama}
+  utter_submit:
+  - text: Nama yang bagus
+  utter_menu_utama:
+  - buttons:
+    - payload: informasi tentang gelar
+      title: gelar
+    - payload: informasi tentang alumni
+      title: alumni
+    - payload: informasi tentang mahasiswa aktif
+      title: mahasiswa aktif
+    - payload: informasi tentang skpi
+      title: SKPI
+    - payload: informasi tentang formulir
+      title: formulir
+    text: 'Berikut informasi yang bisa ditanyakan:'
+  utter_tanya/mahasiswa_aktif:
+  - buttons:
+    - payload: Syarat agar mendapat pelayanan dari administrasi akademik dan kemahasiswaan
+      title: '1'
+    - payload: Pelayanan yang diberikan administrasi akademik dan kemahasiswaan
+      title: '2'
+    - payload: Cara untuk mendapatkan Surat Keterangan Sebagai Mahasiswa Aktif
+      title: '3'
+    - payload: Pengertian Surat Keterangan Mahasiswa Aktif
+      title: '4'
+    - payload: Cara mengganti Kartu Pengenal Mahasiswa (KPM)
+      title: '5'
+    - payload: Siapa saja yang diperbolehkan mengambil Permohonan Cuti Kuliah atau SO (Stop Out)
+      title: '6'
+    - payload: Cara untuk mengajukan Permohonan Cuti Kuliah atau Stop Out (SO)
+      title: '7'
+    - payload: Apakah Seluruh Uang Kuliah Tunggal (UKT) di setiap Fakultas/Program Pascasarjana/Jurusan sama
+      title: '8'
+    - payload: Apa yang dapat dilakukan mahasiswa jika sudah membayar UKT
+      title: '9'
+    text: |-
+      Untuk Informasi seputar Mahasiswa Aktif, silahkan pilih menu dibawah ini : 
+      1. Syarat agar mendapat pelayanan dari administrasi akademik dan kemahasiswaan 
+      2. Pelayanan yang diberikan administrasi akademik dan kemahasiswaan 
+      3. Cara untuk mendapatkan Surat Keterangan Sebagai Mahasiswa Aktif 
+      4. Pengertian Surat Keterangan Mahasiswa Aktif 
+      5. Cara mengganti Kartu Pengenal Mahasiswa (KPM) 
+      6. Siapa saja yang diperbolehkan mengambil Permohonan Cuti Kuliah atau SO (Stop Out) 
+      7. Cara untuk mengajukan Permohonan Cuti Kuliah atau Stop Out (SO) 
+      8. Apakah Seluruh Uang Kuliah Tunggal (UKT) di setiap Fakultas/Program Pascasarjana/Jurusan sama 
+      9. Apa yang dapat dilakukan mahasiswa jika sudah membayar UKT
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/gelar_gelar:
+  - buttons:
+    - payload: Gelar D3
+      title: '1'
+    - payload: Gelar SK
+      title: '2'
+    - payload: Gelar TI
+      title: '3'
+    - payload: Gelar Magister
+      title: '4'
+    - payload: Gelar Magister
+      title: '5'
+    - payload: Program D3
+      title: '6'
+    - payload: Program Sarjana
+      title: '7'
+    - payload: Program Sarjana Magister
+      title: '8'
+    text: |-
+      Untuk informasi seputar Gelar-Gelar, silahkan lihat daftar menu dibawah ini : 
+      1) Gelar D3 
+      2) Gelar SK 
+      3) Gelar TI 
+      4) Gelar SI 
+      5) Gelar Magister 
+      6) Program D3 
+      7) Program Sarjana 
+      8) Program Sarjana Magister
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/gelar_gelar_D3:
+  - text: |2-
+       Gelar untuk program D3 adalah Ahli Madya (A.Md.)
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/gelar_gelar_SK:
+  - text: |-
+      Gelar untuk program SK adalah Sarjana Komputer (S.Kom.)
+       (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/gelar_gelar_TI:
+  - text: |-
+      Gelar untuk program TI adalah Sarjana Komputer (S.Kom.)
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/gelar_gelar_SI:
+  - text: |-
+      Gelar untuk program SI adalah Sarjana Sistem Informasi (S.SI.)
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/gelar_gelar_magister:
+  - text: |-
+      Gelar untuk program magister adalah Magister Teknik Informasi (M.Kom)
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/program_D3:
+  - text: |-
+      Program untuk D3 adalah Diploma Tiga
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/program_sarjana:
+  - text: |-
+      Program untuk sarjana adalah Sistem Komputer, Sistem Informasi dan Teknik Informatika
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/program_sarjana_magister:
+  - text: |-
+      Program untuk sarjana dan magister adalah Teknik Informatika
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/layanan_alumni:
+  - buttons:
+    - payload: Legalisir Ijazah dan Transkrip
+      title: '1'
+    - payload: Surat Keterangan Pengganti Ijazah/Transkrip yang Rusak/Hilang
+      title: '2'
+    - payload: Pembuatan Terjemahan Ijazah/Transkrip ke Dalam Bahasa Inggris
+      title: '3'
+    - payload: Konseling Karir
+      title: '4'
+    - payload: Tracer Study Online
+      title: '5'
+    - payload: Ikatan Alumni
+      title: '6'
+    - payload: Kegiatan Alumni
+      title: '7'
+    text: |-
+      1. Legalisir Ijazah dan Transkrip 
+      2. Surat Keterangan Pengganti Ijazah/Transkrip yang Rusak/Hilang 
+      3. Pembuatan Terjemahan Ijazah/Transkrip ke Dalam Bahasa Inggris 
+      4. Konseling Karir 
+      5. Tracer Study Online 
+      6. Ikatan Alumni 
+      7. Kegiatan Alumni
+      (Jika ingin kembali ke menu utama ketik: Menu utama) 
+  utter_tanya/legalisir_ijazah_transkrip:
+  - text: |-
+      Universitas Sriwijaya melalui BAK Universitas Sriwijaya Indralaya melaksanakan pelayanan legalisir ijazah dan transkrip. Pelaksanaan pelayanan ini dilakukan dengan menggunakan Formulir Lampiran 13.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/ganti_ijazah_transkrip:
+  - text: |-
+      BAK Universitas Sriwijaya Indralaya memberikan pelayanan pembuatan Surat Keterangan Pengganti Ijazah/Transkrip yang rusak/hilang. Pelaksanaan pelayanan dilakukan dengan menggunakan Formulir Lampiran 14.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/transkrip_inggris:
+  - text: |-
+      BAK Universitas Sriwijaya Indralaya memberikan pelayanan pembuatan terjemahan Ijazah/Transkrip ke dalam Bahasa Inggris. Pelaksanaan pelayanan ini dilakukan dengan menggunakan Formulir Lampiran 15.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/konseling_karir:
+  - text: |-
+      Bagi mahasiswa dan atau alumni yang ingin mendapatkan konseling karir, dapat mengisi form e-counseling di web cdc.unsri.ac.id dengan terlebih dahulu mendaftarkan diri secara online sebagai member CDC-Universitas Sriwijaya. Konseling Karir juga dilakukansecara offline di kantor Pusat Pengembangan Karakter dan Karir (CDC-Universitas Sriwijaya) di Gedung Rektorat Lantai 1 Inderalaya, dengan terlahi dahulu mendaftar secara online dan memilih konselor yang tersedia sesuai jadwalnya.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/tracer_study_online:
+  - text: |-
+      Mahasiswa yang akan mendaftar wisuda, wajib terlebih dahulu melakukan registrasi di web cdc.unsri.ac.id dengan mengisi form registrasi secara online. Calon wisudawan yang telah mengisi form tersebut akan mendapatkan bukti registrasi yang dicetak (print) dan diserahkan kepada panitia pelepasan alumni di BAK Universitas Sriwijaya Gedung Rektorat. Setelah 2 tahun kelulusannya, alumni tersebut akan dipanggil oleh sistem (melalui alamat email dan nomor HP) untuk mengisi boring tracer study online di web tersebut.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/ikatan_alumni:
+  - text: |-
+      Ikatan Alumni Universitas Sriwijaya (IKA Unsri) merupakan paguyuban alumni Universitas Sriwijaya semua angkatan.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/kegiatan_ikatan_alumni:
+  - text: |-
+      a. Memantapkan dan mengembangkan organisasi alumni 
+      b. Mengembangkan jejaring informasi alumni yang tersebar diseluruh Indonesia dan beberapa diluar Indonesia 
+      c. Menyelenggarakan kegiatan pengembangan keilmuan bagi mahasiswa 
+      d. Mengembangkan silaturahmi, melestarikan rasa kekeluargaan dan kecintaan terhadap almamater 
+      e. Berkontribusi dalam pengembangan instritusi antara lain memberi masukan dalam pengembangan kurikulum, berbagi pengalaman sebagai dosen tamu, memberikan lokakarya, pelatihan-pelatihan dan memberi kesempatan kerja bagi alumni dll.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/formulir:
+  - buttons:
+    - payload: Lampiran kelengkapan dokumen untuk registrasi mahasiswa baru
+      title: Form 1
+    - payload: Lampiran Dokumen Kartu Induk Data mahasiswa
+      title: Form 2
+    text: |-
+      Untuk Informasi tentang formulir, silahkan pilih menu dibawah ini : 
+      [Form 1] Lampiran kelengkapan dokumen untuk registrasi mahasiswa baru 
+      [Form 2] Lampiran Dokumen Kartu Induk Data mahasiswa
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/form_maba:
+  - text: |-
+      Untuk lampiran dokumen bisa dilihat di link di bawah ini : 
+       https://drive.google.com/file/d/1k8LQbzweuWIgYIspMKmOCpTbAgViQzsa/view
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/form_kartu_induk:
+  - text: |-
+      Untuk lampiran dokumen bisa dilihat di link di bawah ini : 
+       https://drive.google.com/file/d/1ni7tisuQmQrk-5nTnAazuh1bJDtACznt/view
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/skpi:
+  - buttons:
+    - payload: Pengertian Surat Keterangan Pendamping Ijazah (SKPI)
+      title: '1'
+    - payload: Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah (SKPI) bagi Lulusan Universitas Sriwijaya
+      title: '2'
+    - payload: Apa saja isi dari Surat Keterangan Pendamping Ijazah (SKPI)
+      title: '3'
+    text: |-
+      Untuk Informasi seputar SKPI, silahkan pilih menu dibawah ini : 
+      1. Pengertian Surat Keterangan Pendamping Ijazah (SKPI) 
+      2. Aturan yang mengatur tentang Surat Keterangan Pendamping Ijazah (SKPI) bagi Lulusan Universitas Sriwijaya 
+      3. Apa saja isi dari Surat Keterangan Pendamping Ijazah (SKPI) 
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/pengertian_skpi:
+  - text: |-
+      Dokumen yang memuat informasi tentang pemenuhan kompetensi lulusan dalam suatu program pendidikan tinggi
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/aturan_skpi:
+  - text: |-
+      Peraturan Rektor Universitas Sriwijaya No. 01 Tahun 2018
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/isi_skpi:
+  - text: |-
+      1. nomor SKPI; 
+      2. nomor Ijazah nasional; 
+      3. logo perguruan tinggi; 
+      4. nama perguruan tinggi; 
+      5. status akreditasi; 
+      6. nama program studi; 
+      7. nama lengkap SKPI; 
+      8. tempat dan tanggal lahir pemilik SKPI; 
+      9. nomor pokok mahasiswa; 
+      10. tanggal, bulan, tahun masuk, dan kelulusan; 
+      11. gelar yang diberikan beserta singkatannya; 
+      12. jenis pendidikan (akademik, vokasi, atau profesi) 
+      13. program pendidikan tinggi; 
+      14. capaian pembelajaran lulusan program studi sesuai kompetensi lulusan secara naratif; 
+      15. peringkat kompetensi kerja sesuai Kerangka Kualifikasi Nasional Indonesia; 
+      16. bahasa pengantar kuliah; 
+      17. sistem penilaian dan 
+      18. jenis dan jenjang pendidikan lanjutan.
+
+      juga memuat informasi tambahan tentang prestasi akademik mahasiswa, mencakup prestasi mahasiswa bidang kurikuler, ektrakurikuler, atau pendidikan nonformal.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/syarat_pelayanan:
+  - text: |-
+      1. Terdaftar sebagai mahasiswa Universitas Sriwijaya; 
+      2. Membayar biaya pendidikan atau UKT; 
+      3. Tidak dalam masa berhenti sementara (stop out) atau skorsing. 
+      4. Mengisi Kartu Studi Mahasiswa (KSM) secara on-line untuk semester yang ditempuh dan menyerahkan ke Fakultas/Program Pascasarjana/Program masing-masing; 
+      5. Mengikuti kegiatan akademik sesuai KSM yang ditetapkan; 
+      6. Bebas dari narkoba, tindakan kriminal, asusila, indisipliner, keonaran di dalam maupun diluar kampus.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/pelayanan_diberikan:
+  - buttons:
+    - payload: Surat Keterangan sebagai Mahasiswa Aktif Universitas Sriwijaya
+      title: '1'
+    - payload: Pergantian Kartu Pengenal Mahasiswa (KPM)
+      title: '2'
+    - payload: Permohonan Cuti Kuliah atau SO (Stop Out)
+      title: '3'
+    - payload: Pembayaran UKT dan Biaya lainnya bagi Mahasiswa Lama
+      title: '4'
+    - payload: Permohonan Memperoleh Beasiswa
+      title: '5'
+    - payload: Pencairan Beasiswa
+      title: '6'
+    - payload: Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas)
+      title: '7'
+    - payload: Permohonan Menghuni Asrama Universitas Sriwijaya
+      title: '8'
+    - payload: Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya
+      title: '9'
+    - payload: Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya
+      title: '10'
+    - payload: Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya)
+      title: '11'
+    - payload: Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain
+      title: '12'
+    - payload: Pendaftaran Mengikuti Wisuda
+      title: '13'
+    text: |-
+      1. Surat Keterangan sebagai Mahasiswa Aktif Universitas Sriwijaya 
+      2. Pergantian Kartu Pengenal Mahasiswa (KPM) 
+      3. Permohonan Cuti Kuliah atau SO (Stop Out) 
+      4. Pembayaran UKT dan Biaya lainnya bagi Mahasiswa Lama 
+      5. Permohonan Memperoleh Beasiswa 
+      6. Pencairan Beasiswa 
+      7. Perbaikan Kesalahan Penulisan Nilai pada KHS (yang dibuat Universitas) 
+      8. Permohonan Menghuni Asrama Universitas Sriwijaya 
+      9. Pengunduran Diri sebagai Mahasiswa Universitas Sriwijaya 
+      10. Perpindahan Mahasiswa antar Program Studi dalam Lingkungan Universitas Sriwijaya 
+      11. Perpindahan Mahasiswa dari PT lain ke Universitas Sriwijaya 
+      12. Perpindahan Mahasiswa dari Universitas Sriwijaya ke Perguruan Tinggi lain 
+      13. Pendaftaran Mengikuti Wisuda
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/cara_dapat_surat_ket_aktif:
+  - text: |-
+      Mahasiswa dapat datang langsung ke BAK Universitas Sriwijaya, Indralaya dan mengisi formulir pelayanan akademik (Lampiran 3).
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/pengertian_surat_ket_aktif:
+  - text: |-
+      Surat keterangan sebagai mahasiswa Universitas Sriwijaya dengan status sebagai mahasiswa aktif pada semester tertentu.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/cara_ganti_kpm:
+  - text: |-
+      Mahasiswa yang bersangkutan datang ke BAK Universitas Sriwijaya Indralaya untuk mengisi formulir (Lampiran 4) dan menyerahkan persyaratan penggantian KPM yaitu: 
+      a. Surat keterangan dari kepolisian tentang kehilangan KPM. Bagi pergantian KPM yang rusak cukup membawa KPM yang rusak dimaksud. 
+      b. Pasfoto warna ukuran 2 x 3 cm 2 lembar (minimal memakai kemeja berkerah, bukan seragam dinas/sekolah SLTA). 
+      c. Fotokopi KTP/SIM atau surat keterangan dari Fakultas/Jurusan.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)"
+  utter_tanya/siapa_bisa_cuti:
+  - text: |-
+      Seluruh mahasiswa, kecuali mahasiswa penerima beasiswa Bidikmisi dan mahasiswa penerima beasiswa penuh lainnya.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/cara_bisa_cuti:
+  - text: |-
+      Mahasiswa yang bersangkutan datang ke BAK Universitas Sriwijaya, untuk mengisi formulir permohonan SO . Setelah diisi dan ditandatangani oleh mahasiswa, Ketua Jurusan/Koordinator Program Studi, dan Dekan Fakultas/Direktur Pascasarjana yang bersangkutan, formulir dimaksud harus dikembalikan ke BAK Universitas Sriwijaya Indralaya, sebelum masa pengajuan stop out sebagaimana yang ditetapkan dalam Kalender Akademik berakhir.Terhadap permohonan yang disetujui, Universitas Sriwijaya akan menerbitkan SK Rektor tentang Stop Out, dan BAK akan mengeluarkan surat pemberitahuan resmi tentang persetujuan tersebut kepada Fakultas/Pascasarjana/Jurusan/Prodi dan mahasiswa yang bersangkutan.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/ukt_fakultas:
+  - text: |-
+      UKT (uang kuliah tunggal) ditetapkan oleh masing-masing Fakultas/Program Pascasarjana/Jurusan.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/ukt_lunas:
+  - text: |-
+      Mahasiswa dapat mengisi KRS apabila sudah melakukan pembayaran UKT pada Bank yang ditunjuk.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/tidak_bayar_ukt:
+  - text: |-
+      Mahasiswa yang tidak membayar UKT dan tidak mengajukan SO pada waktu yang ditetapkan dianggap mengundurkan diri (drop out) sebagai mahasiswa Universitas Sriwijaya dan data yang bersangkutan di delete by system.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/dapat_beasiswa:
+  - text: |-
+      a. Mencermati dengan seksama pengumuman penawaran beasiswa pada subbagian kemahasiswaan Fakultas atau pada Bagian Kemahasiswaan BAK Universitas Sriwijaya Indralaya. Pada dasarnya semua penawaran beasiswa diumumkan Sub-Bagian kemahasiswaan masing-masing fakultas dan PPs Universitas Sriwijaya serta website Universitas Sriwijaya pada www.unsri.ac.id.atau www.kemahasiswaan.unsri.ac.id. 
+      b. Menyiapkan persyaratan yang diperlukan di antaranya, fotokopi model A (Kartu Keluarga), surat keterangan keluarga kurang mampu dari RT/RW/Kepala Desa setempat, daftar gaji bagi orang tua/walinya yang bekerja. 
+      c. Mengajukan permohonan beasiswa yang persyaratannya sesuai dengan ketentuan pedoman beasiswa dan mengisi formulir permohonan beasiswa Universitas Sriwijaya (Lampiran 6) yang ditandatangani oleh mahasiswa, serta melengkapi berkas-berkas persyaratan lainya yang diperlukan.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/kewajiban_beasiswa:
+  - text: |-
+      a. Mempertahankan dan atau meningkatkan prestasi akademik. 
+      b. Bersungguh-sungguh melaksanakan tugas-tugas akademik mahasiswa yang diberikan kepadanya. 
+      c. Menunjukkan perilaku yang terpuji dan menjadi tauladan bagi mahasiswa lainnya. 
+      d. Menggunakan beasiswa yang diterimanya sesuai dengan maksud dan tujuan pemberian beasiswa. 
+      e. Memberikan laporan akademik secara berkala sesuai yang ditetapkan. 
+      f. Memenuhi seluruh persyaratan dan kewajiban yang ditetapkan oleh Jurusan/Fakultas/Universitas, serta lembaga pemberi beasiswa.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/beasiswa_pascasarjana:
+  - text: |-
+      Permohonan dan penyaluran beasiswa untuk mahasiswa Program Pascasarjana dilakukan langsung oleh pimpinan Program Pascasarjana atau oleh instansi atau badan yang menyediakan beasiswa.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/pencairan_beasiswa:
+  - text: |-
+      Pencairan beasiswa mahasiswa dilakukan dengan dua cara tergantung pada ketentuan dari lembaga penyedia dana, yaitu diberikan melalui Universitas Sriwijaya yang diberikan dengan cara di transfer ke rekening mahasiswa penerima beasiswa atau diberikan langsung oleh penyandang dana tanpa melalui Universitas Sriwijaya kepada mahasiswa melalui sistem transfer rekening ke tabungan mahasiswa.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/waktu_pencairan_beasiswa:
+  - text: |-
+      Waktu dan intensitas pencairan uang beasiswa yang diberikan melalui Universitas Sriwijaya bervariasi tergantung ketentuan kiriman dana dari lembaga penyedia dana.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/perbaikan_khs:
+  - text: |-
+      Usulan perbaikan kesalahan penulisan nilai pada Kartu Hasil Studi (KHS) yang dibuat Universitas dilakukan melalui surat permohonan resmi dari Dekan/Direktur Pascasarjana/Ketua Jurusan/Ketua Pogram Studi kepada Rektor Universitas Sriwijaya dengan melampirkan fotokopi KHS yang salah dan fotokopi DPNA yang dilegalisir. Perbaikan kesalahan yang disebabkan oleh kesalahan penulisan pada DPNA, melampirkan surat dari dosen penanggung jawab mata kuliah, disertai penjelasan tentang penyebab kesalahan atau perbaikan yang perlu dilakukan.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/tempat_perbaikan_khs:
+  - text: |-
+      Perbaikan KHS yang dibuat Fakultas/Program Pascasaarjana/Jurusan/Prodi dilakukan langsung di Fakultas/Program Pascasarjana/Jurusan/ Prodi sesuai dengan ketentuan.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/sedia_asrama:
+  - text: |-
+      Universitas Sriwijaya menyediakan asrama bagi mahasiswa dalam jumlah terbatas di Kampus Universitas Sriwijaya Indralaya, dan di Bukit Besar, Palembang.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/pengajuan_asrama:
+  - text: |-
+      Bagi mahasiswa yang berminat untuk tinggal di asrama dapat mengajukan permohonan kepada Rektor Universitas Sriwijaya melalui Pembantu Rektor III dengan menggunakan Lampiran 7 terdiri dari form asrama 01, 02, 03 dan 04, dan dapat di download di www.kemahasiswaan.unsri.ac.id. Formulir tersebut ditandatangani oleh mahasiswa, Ketua Jurusan, dan Dekan serta dengan melampirkan berkas persyaratan di antaranya, fotokopi model A (kartu keluarga), surat keterangan keluarga kurang mampu dari RT/RW/Kepala Desa setempat, daftar gaji bagi orang tua/walinya yang bekerja, serta surat ijin orang tua/wali untuk tinggal di Asrama Universitas Sriwijaya.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/pengunduran_mahasiswa:
+  - text: |-
+      Prosedur pengunduran diri sebagai mahasiswa dilakukan dengan mengajukan surat pengunduran diri kepada Rektor Universitas Sriwijaya (Lampiran 8), yang ditandatangani mahasiswa yang bersangkutan, orang tua/wali, Ketua Jurusan, Ketua Program dan Dekan Fakultas/Direktur Pascasarjana yang bersangkutan. Terhadap permohonan yang disetujui, Universitas akan menerbitkan SK Rektor dan mengeluarkan surat pemberitahuan persetujuan terhadap permohonan tersebut.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/pindah_prodi:
+  - text: |-
+      a. Mengajukan permohonan (Lampiran 9) kepada Rektor Universitas Sriwijaya. Permohonan ditandatangani oleh mahasiswa, orang tua/wali, Ketua Jurusan, dan Dekan Fakultas di mana mahasiswa saat sedang kuliah, dilampiri dengan Daftar Nilai (fotokopi KHS yang dilegalisir) dan surat keterangan lain yang mendukung alasan perpindahan. 
+      b. Universitas melalui BAK, akan meneruskan permohonan dimaksud kepada Dekan/Direktur Pascasarjana/Ketua Program/Ketua Jurusan/Ketua Prodi di mana program studi yang ingin dimasuki mahasiswa berada, guna mendapatkan pertimbangan penerimaan atau penolakan. 
+      c. Universitas, melalui BAK akan memberitahukan kepada mahasiswa yang bersangkutan tentang persetujuan atau penolakan terhadap usulan tersebut. Apabila diterima, dilanjutkan dengan pembuatan SK Rektor, penyelesaian administrasi akademik dan keuangan, serta penetapan NIM dan pembuatan KPM yang baru.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/univ_luar_ke_unsri:
+  - text: |-
+      a. Mengajukan permohonan (Lampiran 10) kepada Rektor Universitas Sriwijaya. Permohonan ditandatangani oleh mahasiswa, orang tua/wali, Ketua Jurusan/Prodi, dan Dekan Fakultas/Direktur Pascasarjana di mana mahasiswa saat sedang kuliah, dilampiri dengan Daftar Nilai (fotokopi KHS yang dilegalisir), serta surat rekomendasi dari Rektor/pimpinan perguruan tinggi asal, serta surat keterangan lain yang mendukung alasan perpindahan. 
+      b. Universitas melalui BAK, akan meneruskan permohonan dimaksud kepada Dekan/Ketua Program di mana program studi yang ingin dimasuki mahasiswa berada, guna mendapatkan pertimbangan penerimaan atau penolakan. 
+      c. Universitas, melalui BAK akan memberitahukan kepada mahasiswa yang bersangkutan tentang persetujuan atau penolakan terhadap usulan tersebut. Apabila diterima, dilanjutkan dengan pembuatan SK Rektor tentang penerimaan, registrasi, penyelesaian administrasi akademik dan keuangan, pembuatan KPM, dan jaket almamater.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/unsri_ke_luar_univ:
+  - text: |-
+      a. Mengajukan permohonan (Lampiran 11) kepada Rektor Universitas Sriwijaya. Permohonan ditandatangani oleh mahasiswa, orang tua/wali, Ketua Jurusan/Prodi, dan Dekan Fakultas/Direktur Pascasarjana di mana mahasiswa saat sedang kuliah, dilampiri dengan Daftar Nilai (fotokopi KHS yang dilegalisir), serta surat keterangan lain yang mendukung alasan perpindahan. 
+      b. Universitas melalui BAK, akan meneruskan permohonan dimaksud kepada Dekan/Direktur PascasarjanaKetua Jurusan/Prodi dimana mahasiswa saat kuliah mendapatkan pertimbangan penerimaan atau penolakan. 
+      c. Universitas, melalui BAK akan memberitahukan kepada mahasiswa yang bersangkutan tentang persetujuan atau penolakan terhadap usulan tersebut. Apabila diterima, dilanjutkan dengan pembuatan SK Rektor, dan pembuatan surat keterangan/rekomendasi yang diperlukan dalam proses tentang perpindahan tersebut.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/waktu_daftar_wisuda:
+  - text: |-
+      Pendaftaran untuk mengikuti Wisuda Universitas Sriwijaya dilaksanakan sesuai dengan waktu yang ditetapkan pada Kalender Akademik.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/pendaftaran_wisuda:
+  - text: |-
+      a. Pendaftaran wisuda pada waktu yang ditetapkan secara daring pada laman www.cdc.unsri.ac.id dengan mengisi formulir secara daring serta melengkapi seluruh berkas-berkas persyaratan yang ditetapkan. Pada saat pendaftaran mahasiswa memperoleh undangan wisuda dan dapat membeli/menyewa pakaian wisuda (toga), serta memesan rekaman gambar (video) acara wisuda. 
+      b. Menghubungi petugas wisuda fakultas dan universitas untuk menandatangani ijazah paling lambat satu minggu sebelum pelaksanaan wisuda. 
+      c. Mengikuti upacara gladi resik yang dilaksanakan dua hari sebelum pelaksanaan wisuda. 
+      d. Datang menghadiri wisuda dengan pakaian toga pada waktu yang ditetapkan, dan menerima ijazah dari Dekan Fakultas/Direktur Program serta pemindahan kuncir oleh Rektor.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/sistem_pembayaran_ukt:
+  - text: |-
+      Sistem pembayaran tagihan setoran mahasiswa sudah terintegrasi antara Bank yang ditunjuk dengan sistem manajemen Akademik dan Kemahasiswaan (SIMAK) Universitas Sriwijaya.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/macam_macam_beasiswa:
+  - text: |-
+      Universitas Sriwijaya menyediakan beasiswa dari berbagai sumber yang persyaratan dan waktu penyalurannya bervariasi tergantung pada sumber dananya.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/syarat_pindah_prodi:
+  - text: |-
+      Apabila memenuhi persyaratan yang ditetapkan, mahasiswa dapat mengajukan untuk pindah antar jurusan/program studi yang ada dalam lingkungan Universitas Sriwijaya.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+  utter_tanya/syarat_pindah_univ:
+  - text: |-
+      Apabila memenuhi persyaratan yang ditetapkan, mahasiswa dari Perguruan Tinggi (PT) lain yang memiliki status Akreditasi minimal sepadan dengan Universitas Sriwijaya dapat mengajukan permohonan untuk pindah ke jurusan/program studi yang sama dalam lingkungan Universitas Sriwijaya.
+      (Jika ingin kembali ke menu utama ketik: Menu utama)
+actions:
+- action_simpan_nama
+- action_ambil_nama
+forms: {}
+e2e_actions: []

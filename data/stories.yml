@@ -1,0 +1,26 @@
+version: "2.0"
+
+stories:
+
+- story: untuk umum 
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_nama
+  - intent: user_nama
+    entities :
+    - nama
+  - action: action_simpan_nama
+  - action: action_ambil_nama
+  - action: utter_menu_utama
+
+ 
+
+
+
+
+
+
+
+
+
